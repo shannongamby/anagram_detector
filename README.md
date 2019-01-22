@@ -9,6 +9,12 @@ I used TDD to complete this task in Ruby.
 - Run `bundle install` to install dependencies.
 - Use `rspec` to run tests.
 
+## Usage
+
+Run the command `ruby interface.rb` and follow the instructions to interact with the app.
+  
+![demo](assets/example.png)
+
 ## User Story
 ```
 As a feature of an app, 
