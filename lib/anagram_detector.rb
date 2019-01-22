@@ -2,7 +2,7 @@ class AnagramDetector
   def detect_anagram(word, list)
     sorted_word = sort(word)
     sorted_list = sort_words(list)
-    sorted_list.include?(sorted_word) ? 'Anagram detected.' : 'No anagrams found.'
+    sorted_list.include?(sorted_word) ? true : false
   end
 
   private
@@ -12,6 +12,6 @@ class AnagramDetector
   end
 
   def sort(word)
-    word.chars.sort.join('')
+    word.downcase.chars.sort.join('')
   end
 end
