@@ -1,15 +1,17 @@
 class AnagramDetector
-  def solve(word, list)
-    sorted_word = word.chars.sort.join('')
+  def detect_anagram(word, list)
+    sorted_word = sort(word)
     sorted_list = sort_words(list)
-    if sorted_list.include?(sorted_word)
-      'Anagram detected.'
-    else
-      'No anagrams found.'
-    end
+    sorted_list.include?(sorted_word) ? 'Anagram detected.' : 'No anagrams found.'
   end
 
+  private
+
   def sort_words(list)
-    list.map { |word| word.chars.sort.join('') }
+    list.map { |word| sort(word) }
+  end
+
+  def sort(word)
+    word.chars.sort.join('')
   end
 end
