@@ -18,4 +18,13 @@ describe AnagramDetector do
       expect(subject.detect_anagram('cars', %w[])).to eq false
     end
   end
+
+  context 'word should only contain letters' do
+    it 'raises an error if word contains a number' do
+      expect{subject.detect_anagram('1234', %w[hi hello howdy])}.to raise_error 'Invalid character'
+    end
+    it 'raises an error if word contains punctuation' do
+      expect{subject.detect_anagram('a!@$z', %w[hi hello howdy])}.to raise_error 'Invalid character'
+    end
+  end
 end
